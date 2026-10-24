@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# APKs and decompiled output
+*.apk
+*_decompiled/
+samples/
+
+# Generated feature data
+*.parquet
+*.tmp
+features.json
+apk_index.csv
+
+# Logs
+logs/
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
