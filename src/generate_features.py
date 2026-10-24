@@ -77,7 +77,8 @@ def main(dataset_dir, start_month=None, end_month=None):
                     continue
 
                 # build one row: file info plus each feature list as its own column
-                row = {"name": name, "month": month, "package": package,
+                # meta.month is the month folder name (e.g. "2012-01"), like meta.vt.date in the old dataset
+                row = {"name": name, "meta.month": month, "package": package,
                        **{f: features[f] for f in FEATURE_NAMES}}
                 data[label] = pd.concat([data[label], pd.DataFrame([row])], ignore_index=True)   # add row to malware or goodware table
                 # add this file to the index csv table

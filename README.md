@@ -65,7 +65,7 @@ python src/generate_features.py 2012-02 2012-06   # 2012-02 through 2012-06
 
 The script writes its output into the dataset folder:
 
-- `malware_<YYYY-MM>.parquet` and `goodware_<YYYY-MM>.parquet` contain one row per APK, with `name`, `month`, `package`, and one column per feature.
+- `malware_<YYYY-MM>.parquet` and `goodware_<YYYY-MM>.parquet` contain one row per APK, with `name`, `meta.month` (the month folder name, e.g. `2012-01`), `package`, and one column per feature.
 - `apk_index.csv` lists every processed file (`name`, `filepath`, `month`).
 
 Progress is saved every 100 APKs and at the end of each month, including after a crash or Ctrl+C. Files already listed in `apk_index.csv` are skipped, so re-running the script resumes where it left off. Paths in the index are stored relative to the dataset folder's parent (for example `ANDRO/2012-01/goodware/x.apk`), so keep the dataset folder's name the same between runs.
